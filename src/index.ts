@@ -1,30 +1,58 @@
+import { Joueur } from "./joueur";
+import { Equipe } from "./Equipe";
+
+equipe_basket()
+function equipe_basket() {
+    console.log("formation de l'équipe 1");
+    const joueur_1 = new Joueur("wasteur","logane",25);
+    const joueur_2 = new Joueur("gogo","ethane",24);
+    const equipes_1 = new Equipe([joueur_1, joueur_2])
+    console.log(equipes_1);
+    equipes_1.afficher()
+
+    console.log("formation de l'équipe 2");
+    const joueur_3 = new Joueur("toier","barte",31);
+    const joueur_4 = new Joueur("kolti","hugo",19);
+    const equipes_2 = new Equipe([joueur_3, joueur_4])
+    console.log(equipes_2);
+    equipes_2.afficher()
+    
+
+
+
+    // console.log(equipes_1.joueur[0] , equipes_1.joueur[1]);
+}
+
+
+
 import { Pomme } from "./Pomme";
 import { Conducteur } from "./Conducteuc";
-import { Voiture } from "./Voiture"
+import { Voiture } from "./Voiture";
 
-const voiture_neuve = new Voiture('noire', 100);
-const voiture_petite = new Voiture('rouge', 22);
-voiture_neuve.crasher();
+// function_voiture()
+function function_voiture() {
+    const voiture_neuve = new Voiture('noire', 100);
+    const voiture_petite = new Voiture('rouge', 22);
+    voiture_neuve.crasher();
 
-console.log("état de la voiture neuve",voiture_neuve.etat, "| couleur",voiture_neuve.couleur);
-console.log("état de la petite voiture",voiture_petite.etat, "| couleur",voiture_petite.couleur);
+    console.log("état de la voiture neuve",voiture_neuve.etat, "| couleur",voiture_neuve.couleur);
+    console.log("état de la petite voiture",voiture_petite.etat, "| couleur",voiture_petite.couleur);
 
-console.log();
+    console.log();
 
-const conducteur_1 = new Conducteur("WASTEUR", "logane",[voiture_petite]);
-conducteur_1.direbonjour();
-conducteur_1.crash(0)
+    const conducteur_1 = new Conducteur("WASTEUR", "logane",[voiture_petite]);
+    conducteur_1.direbonjour();
+    conducteur_1.crash(0);
 
-console.log();
+    console.log();
 
-conducteur_1.voitures.forEach(v => {console.log(v.couleur);});
+    conducteur_1.voitures.forEach(v => {console.log(v.couleur);});
 
-console.log();
+    console.log();
 
-console.log(conducteur_1.voitures[0].etat);
-console.log(voiture_petite.etat);
-
-
+    console.log(conducteur_1.voitures[0].etat);
+    console.log(voiture_petite.etat);
+}
 
 // const apple = new Pomme('Granny Smilt', 'Verte', 102)
 // apple.Afficher();
@@ -84,3 +112,18 @@ console.log(voiture_petite.etat);
 //     Conducteur->>+Voiture: nouvel etat ?
 //     Voiture->>-Conducteur: etat = 80%
 //     Conducteur->>-Programme: voiture(index) crashée (etat = 80%)
+
+// sequenceDiagram 
+//     programe->>Voiture: créer voiture [couleur, état]
+//     Voiture->>Voiture: crasher -20%
+//     Voiture->>programe: nouvelle instance ok
+//     programe->>Conducteur: créer [nom, prenom, voiture]
+//     Conducteur->>programe: nouvelle instance ok
+//     programe->>Conducteur: dire bonjour nom,prenom
+//     Conducteur->>Conducteur: ce crash avec la voiture -20%
+//     Conducteur->>Voiture: nouvelle état voiture(index)
+
+//     programe->>Conducteur: créer [V1]
+//     Conducteur->>programe: nouvelle intance de voitures
+//     programe->>Conducteur: affiche les voitures
+//     Conducteur->>programe: le nombre de voiture = 1
