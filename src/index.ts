@@ -1,26 +1,24 @@
 import { Joueur } from "./joueur";
 import { Equipe } from "./Equipe";
+import { Match } from "./match";
+import { Tournoi } from "./tournoi";
 
 equipe_basket()
 function equipe_basket() {
     console.log("formation de l'équipe 1");
-    const joueur_1 = new Joueur("wasteur","logane",25);
-    const joueur_2 = new Joueur("gogo","ethane",24);
-    const equipes_1 = new Equipe([joueur_1, joueur_2])
-    console.log(equipes_1);
-    equipes_1.afficher()
+    const j1 = new Joueur("wasteur","logane",25 );
+    const j2 = new Joueur("gogo","ethane",24);
+    const equipes_1 = new Equipe([j1, j2])
+    equipes_1.afficher_nbr_j()
 
     console.log("formation de l'équipe 2");
-    const joueur_3 = new Joueur("toier","barte",31);
-    const joueur_4 = new Joueur("kolti","hugo",19);
-    const equipes_2 = new Equipe([joueur_3, joueur_4])
-    console.log(equipes_2);
-    equipes_2.afficher()
-    
+    const j3 = new Joueur("toier","barte",31);
+    const j4 = new Joueur("kolti","hugo",19);
+    const equipes_2 = new Equipe([j3, j4])
+    equipes_2.afficher_nbr_j()
 
-
-
-    // console.log(equipes_1.joueur[0] , equipes_1.joueur[1]);
+    const match_1 = new Match(equipes_1,equipes_2,0,0)
+    match_1.creer_match()
 }
 
 
@@ -28,6 +26,7 @@ function equipe_basket() {
 import { Pomme } from "./Pomme";
 import { Conducteur } from "./Conducteuc";
 import { Voiture } from "./Voiture";
+import { match } from "assert";
 
 // function_voiture()
 function function_voiture() {

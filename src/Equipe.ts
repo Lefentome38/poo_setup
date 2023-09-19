@@ -1,18 +1,17 @@
 import { Joueur } from "./joueur"
-
 export class Equipe{
 
-   public joueur: Joueur[]
+   public joueurs: Joueur[]
     
-    constructor( joueur:Joueur[]){
-        this.joueur = joueur
+    constructor( joueurs:Joueur[]){
+        this.joueurs = joueurs
     }
 
-    // public formationéquipe(index: number): void {
-    //     this.joueur[index]
+    public afficher_nbr_j(): void {
+        console.log("joueurs:",this.joueurs.length);
+    }
+
+    // public creer_point(): void{
+    //     this.point = Math.floor(Math.random()*21)
     // }
-
-    public afficher(): void {
-        console.log(this.joueur.length);
-    }
 }

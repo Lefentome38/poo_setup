@@ -9,8 +9,4 @@ export class Joueur {
         this.prenom = prenom
         this.age = age
     }
-
-    public xxx() {
-
-    }
 }
